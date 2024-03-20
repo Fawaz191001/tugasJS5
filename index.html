@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Handler</title>
+    <link rel="stylesheet" href="css/style1.css" />
+  </head>
+  <body>
+    <h2>Letakan Kursor ke masing-masing kotak untuk melihat gambar</h2>
+    <div id="div1">This is a Horse</div>
+    <div id="div2">This is a Cat</div>
+    <div id="div3">This is a Elephant</div>
+
+    <audio id="horseSound" src="sound/horse_sound.mp3"></audio>
+    <audio id="catSound" src="sound/cat_sound.mp3"></audio>
+    <audio id="elephantSound" src="sound/elephant_sound.mp3"></audio>
+
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>
+      //tugas hari ini
+      //ketika mousenya diatas gambar atau kotak maka hewannya bisa bersuara
+      $('document').ready(function () {
+        $('#div1').mouseover(function () {
+          $(this).css({
+            background: 'url(https://png.pngtree.com/thumb_back/fw800/background/20230615/pngtree-horses-running-in-nature-image_2913264.jpg)',
+          });
+          $('#horseSound')[0].play();
+        });
+        $('div').mouseout(function () {
+          $(this).css({
+            background: 'green',
+          });
+          $('#horseSound')[0].pause();
+          $('#horseSound')[0].currentTime = 0;
+        });
+        $('#div2').mouseover(function () {
+          $(this).css({
+            background: 'url(https://static.promediateknologi.id/crop/0x0:0x0/750x500/webp/photo/p2/01/2023/11/17/Kucing-Ragamuffin-4227232859.jpg)',
+          });
+          $('#catSound')[0].play();
+        });
+        $('div').mouseout(function () {
+          $(this).css({
+            background: 'green',
+          });
+          $('#catSound')[0].pause();
+          $('#catSound')[0].currentTime = 0;
+        });
+        $('#div3').mouseover(function () {
+          $(this).css({
+            background: 'url(https://c.files.bbci.co.uk/10D74/production/_126208986_wed5.jpg)',
+          });
+          $('#elephantSound')[0].play();
+        });
+        $('div').mouseout(function () {
+          $(this).css({
+            background: 'green',
+          });
+          $('#elephantSound')[0].pause();
+          $('#elephantSound')[0].currentTime = 0;
+        });
+      });
+    </script>
+  </body>
+</html>
